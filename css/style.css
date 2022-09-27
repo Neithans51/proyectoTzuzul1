@@ -1,5 +1,5 @@
 *{
-    background-color: #119;
+    background-color: #779ecb;
     box-sizing: border-box;
     margin: 0;
     font-family: 'Share Tech Mono', monospace;
@@ -8,7 +8,9 @@
 #container{
     display: flex;
     min-height: 100vh;
-    /* border: 1px solid green; */
+    background-image: url("img/wallpaperbetter.com_1280x800.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #container > *{
@@ -23,22 +25,21 @@
     top: 20%;
     width: 900px;
     height: 600px;
-    /* border: 1px solid red; */
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-    background-color: #000;
     overflow-y: scroll;
-    scrollbar-color: white;
+    scrollbar-color: #000;
     scrollbar-width: auto;
     box-shadow: 19px 19px 10px 1px rgba(10,10,10,0.75);
     -webkit-box-shadow: 19px 19px 10px 1px rgba(10,10,10,0.75);
     -moz-box-shadow: 19px 19px 10px 1px rgba(10,10,10,0.75);
     position:absolute;
-
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
 }
 
 #barra-estado{
-    /* border: 1px solid blue; */
     display: grid;
     top: 15%;
     width: 900px;
@@ -88,7 +89,7 @@ ul{
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
     color: white;
-    background-color: #000;
+    background-color: transparent;
     padding: 0;
     border: 1px;
     margin-top: 3px;
