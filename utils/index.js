@@ -1,4 +1,5 @@
 import {localStorageDefault } from "../config/index.js";
+localStorage.setItem("nombreUsuario");
 const input = document.getElementById('input');
 const barra = document.getElementById('barra-estado');
 const terminal = document.getElementById("terminal");
