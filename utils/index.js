@@ -1,5 +1,4 @@
 import {localStorageDefault } from "../config/index.js";
-localStorage.setItem("nombreUsuario");
 const input = document.getElementById('input');
 const barra = document.getElementById('barra-estado');
 const terminal = document.getElementById("terminal");
@@ -179,7 +178,7 @@ function redireccionarACapitulo(cap){
     }
 }
 
-if(localStorage.getItem("nombreUsuario") == "undefined"){
+if(localStorage.getItem("nombreUsuario") == null || localStorage.getItem("nombreUsuario") == "null"){
     var usuario = prompt("Dime tu nombre");
     localStorage.setItem("nombreUsuario", usuario);
     userName.textContent = usuario;
@@ -190,4 +189,3 @@ if(localStorage.getItem("nombreUsuario") == "undefined"){
 newTextElement("Hola Bienvenido");
 showMenu(menu);
 validarInput(seleccionarOpcionMenu);
-
