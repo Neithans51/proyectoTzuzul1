@@ -133,29 +133,36 @@ function seleccionarOpcionMenu(valor){
 }
 
 function showLevels(array){
-    let newMenuOption = document.createElement("p");
-    newMenuOption.style = "color: lightseagreen"
-    
     if(localStorage.getItem("progress") == "1" || localStorage.getItem("progress") == "New game"){ 
+        let newMenuOption = document.createElement("p");
+        newMenuOption.style = "color: lightseagreen"
         newMenuOption.textContent = array[0];
         input.insertAdjacentElement("beforebegin", newMenuOption);
     }else if(localStorage.getItem("progress") == "2"){
         for(let i = 0; i < 2; i++){
+            let newMenuOption = document.createElement("p");
+            newMenuOption.style = "color: lightseagreen"
             newMenuOption.textContent = array[i];
             input.insertAdjacentElement("beforebegin", newMenuOption);
         } 
     }else if(localStorage.getItem("progress") == "3"){
         for(let i = 0; i < 3; i++){
+            let newMenuOption = document.createElement("p");
+            newMenuOption.style = "color: lightseagreen"
             newMenuOption.textContent = array[i];
             input.insertAdjacentElement("beforebegin", newMenuOption);
         }
     }else if(localStorage.getItem("progress") == "4"){
         for(let i = 0; i < 4; i++){
+            let newMenuOption = document.createElement("p");
+            newMenuOption.style = "color: lightseagreen"
             newMenuOption.textContent = array[i];
             input.insertAdjacentElement("beforebegin", newMenuOption);
         }
     }else if(localStorage.getItem("progress") == "5"){
         for(let i = 0; i < 5; i++){
+            let newMenuOption = document.createElement("p");
+            newMenuOption.style = "color: lightseagreen"
             newMenuOption.textContent = array[i];
             input.insertAdjacentElement("beforebegin", newMenuOption);
         }
