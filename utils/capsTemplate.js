@@ -20,20 +20,17 @@ function syncDelay(milliseconds){
 export const template = (dialogues, options, dialogues2, chapter) => {
     validarInput()
     autosave(chapter)
-
     
-    dialogues.forEach(dialogue => {
-        let dialogueIndex = dialogues.findIndex(element => element === dialogue)
-        newTextElement(dialogue)
-        if(dialogue === "Razit muere" || dialogue === "Consumes el poder de las plantas de razit" || dialogue === "Escribe 'siguiente' para avanzar"){
-            getDialogues(dialogueIndex ,options, dialogues2, "...")
-            syncDelay(100);
-        }else{
-            const input = prompt(`${dialogue}\n\telige la opcion:\n\t\t${options[dialogueIndex][0]}\n\t\t${options[dialogueIndex][1]}\n\t\t${options[dialogueIndex][2]}`);
-            getDialogues(dialogueIndex, options, dialogues2, input);
-            syncDelay(100);
+    for(let i = 0; i < dialogues.length; i++){
+        newTextElement(dialogues[i]);
+        let dialogueIndex = dialogues.findIndex(element => element === dialogues[i]);
+        const input = prompt(`${dialogues[i]}\n\telige la opcion:\n\t\t${options[dialogueIndex][0]}\n\t\t${options[dialogueIndex][1]}\n\t\t${options[dialogueIndex][2]}`);
+        if(input === "atras"){
+            i-=2;
         }
-    });
+        getDialogues(dialogueIndex, options, dialogues2, input);
+        syncDelay(100);
+    }
 }
 
 const getDialogues = (dialogueIndex, options, dialogues2, input) => {
