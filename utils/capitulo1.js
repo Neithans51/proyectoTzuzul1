@@ -12,10 +12,14 @@ function syncDelay(milliseconds){
 const template = (dialogues, options, dialogues2) => {
     dialogues.forEach(dialogue => {
         newTextElement(dialogue);
-        const input = prompt(`${dialogue}\n\telige la opcion: 
-                            \n\t${options[0][0]}\n\t${options[0][1]}\n\t${options[0][2]}`);
-        getDialogues(dialogues2, input);
-        syncDelay(2000);
+        if(dialogue == "Razit muere" || dialogue == "Consumes el poder de las plantas de razit" || dialogue == "Te diriges a la siguiente sala"){
+            getDialogues(dialogues2, "...")
+            syncDelay(2000);
+        }else{
+            const input = prompt(`${dialogue}\n\telige la opcion:\n\t\t${options[0][0]}\n\t\t${options[0][1]}\n\t\t${options[0][2]}`);
+            getDialogues(dialogues2, input);
+            syncDelay(2000);
+        }
     });
 }
 
@@ -23,16 +27,22 @@ const getDialogues = (dialogues2, input) => {
     
     switch (input){
         case options[0][0]:
-            newTextElement(`haz elegido ${input} \n ${dialogues2[0][0]}`); 
+        case "atacar":    
+            respuesta(`haz elegido ${input}: ${dialogues2[0][0]}`); 
             break;
         case options[0][1]:
-            newTextElement(`haz elegido ${input} \n ${dialogues2[0][1]}`); 
+        case "hablar":
+            respuesta(`haz elegido ${input}: ${dialogues2[0][1]}`); 
             break;
         case options[0][2]:
-            newTextElement(`haz elegido ${input} \n ${dialogues2[0][2]}`); 
+        case "huir":
+            respuesta(`haz elegido ${input}: ${dialogues2[0][2]}`); 
+            break;
+        case "...":
+            respuesta(`...`); 
             break;
         default:
-            newTextElement("si"); 
+            respuesta("no haces nada, Razit aprovecha para asestarte un golpe"); 
             break;
     }
 }
@@ -49,6 +59,14 @@ function newTextElement(content){
     let newText = document.createElement("p");
     newText.textContent = content;
     input.insertAdjacentElement("beforebegin", newText);
+    return content;
+}
+
+function respuesta(content){
+    let nuevaRespuesta = document.createElement("p");
+    nuevaRespuesta.style = "color: lightseagreen";
+    nuevaRespuesta.textContent = content;
+    input.insertAdjacentElement("beforebegin", nuevaRespuesta);
     return content;
 }
 
@@ -134,24 +152,28 @@ const enunciado = [
 //validarInput(newTextElement);
 
 const dialogues = [
-    "Te levantas en la mañana",
-    "Sales de tu casa",
-    "Viene alguien"
+    "Razit se presenta y prepara sus dagas",
+    "Razit lanza esporas venenosas que cubren la habitacion",
+    "Razit lanza sus dagas hacia ti",
+    "Razit se encuentra mal herido por la batalla",
+    "Razit muere",
+    "Consumes el poder de las plantas de razit",
+    "Te diriges a la siguiente sala"
 ]
 
 const options = [
    [
-    "salir",
-    "mirar",
-    "hablar"
+    "ATACAR",
+    "HABLAR",
+    "HUIR"
    ] 
 ]
 
 const dialogues2 = [
     [
-        "Te vestiste y tomas las llaves",
-        "Cierras la puerta",
-        "Lo saludas"
+        "Atacas y razit recibe el golpe",
+        "Razit no quiere hablar contigo y te ataca",
+        "Fuiste herido por razit, mientras huias"
     ]
 ]
 

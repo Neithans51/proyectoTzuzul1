@@ -111,3 +111,13 @@ input:focus-visible{
     margin-bottom: 7px;
     display: flex;
 }
+
+footer{
+    text-align: center; 
+    background-color: transparent; 
+    color: white; 
+    display: flex; 
+    position: absolute; 
+    top: 40%; 
+    left: 80%;
+}
