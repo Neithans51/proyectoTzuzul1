@@ -164,7 +164,7 @@ function showLevels(array){
     }
 }
 
-function redireccionarACapitulo(cap){
+export function redireccionarACapitulo(cap){
     if(cap == "capitulo 1"){
         location.href = "caps/capitulo1.html";
     }else if(cap == "capitulo 2"){
