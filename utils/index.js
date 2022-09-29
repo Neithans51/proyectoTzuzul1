@@ -98,20 +98,20 @@ function seleccionarOpcionMenu(valor){
         redireccionarACapitulo("capitulo 1");
     }else if(valor == "2"){
         switch(localStorage.getItem("progress")){
-            case "capitulo 1":
+            case "1":
             case "New game":
                 redireccionarACapitulo("capitulo 1");
                 break;
-            case "capitulo 2":
+            case "2":
                 redireccionarACapitulo("capitulo 2");
                 break;
-            case "capitulo 3":
+            case "3":
                 redireccionarACapitulo("capitulo 3");
                 break;
-            case "capitulo 4":
+            case "4":
                 redireccionarACapitulo("capitulo 4");
                 break;
-            case "capitulo 5":
+            case "5":
                 redireccionarACapitulo("capitulo 5");
                 break;
             default:
